@@ -1,0 +1,194 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: gold;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header and navigation positioning */
+header {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Flip menu styles - EXACTLY like your original */
+.flip-menu {
+    display: flex;
+    gap: 10px;
+    perspective: 1000px;
+}
+
+.flip-menu a {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+.flip-menu a:hover {
+    transform: rotateX(90deg);
+}
+
+.flip-menu .front,
+.flip-menu .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid #ddd;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    box-shadow: 10px 10px burlywood, -5px -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.flip-menu .front {
+    background-color: black;
+    color: white;
+}
+
+.flip-menu .back {
+    background-color: red;
+    color: white;
+    transform: rotateX(-90deg);
+}
+
+/* Main content styles */
+main {
+    max-width: 800px;
+    margin: 100px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+main p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .flip-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    main {
+        margin-top: 20px;
+    }
+}
+
+
+*{
+  font-family: roboto,sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+    background:#ccc;   
+}
+ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    margin: 0 5px;
+}
+ul li a .fa.brands{
+    font-size: 40px;
+    color: #262626;
+    line-height: 80px;
+    transition: 0.5s;
+    padding-right: 14px;
+}
+ul li a span{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 30px;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+ul li a{
+    text-decoration: none;
+    display: absolute;
+    display: block;
+    width: 210px;
+    height: 80px;
+    background: #fff;
+    padding-left: 20px;
+    text-align: left;
+    transform: rotate(-30%)skew(25deg)translate(0,0);
+    transition: 0,5s;
+    box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
+}
+
+ul li a ::before{
+    content: '';
+    position: absolute;
+    top:10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background-color: #b1b1b1;
+    transform: 0.5s;
+    transform: rotate(0deg)skewy(-45deg);
+}
+ul li a::after{
+    content:'';
+    position: absolute;
+    bottom: 20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    transform: 0.5s;
+    transform: rotate(0deg)skewx(-45deg);
+}
+ul li a:hover{
+    transform: rotate(-30%)skew(25deg)translate(20px,-15px);
+    box-shadow: -50px 50px 50px rgba(0,0,0,0.5);    
+}    
+ul li :hover .fa.brands{
+    color: #fff;
+
+}
